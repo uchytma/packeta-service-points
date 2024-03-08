@@ -1,14 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"packeta"
+)
 
 func main() {
 	// downloadData()
 
-	ch := make(chan CarrierPoint)
-	go consumer(ch)
+	ch := make(chan packeta.CarrierPoint)
+	go packeta.Consumer(ch)
 
-	err := processFile(ch)
+	err := packeta.ProcessFile(ch)
 	if err != nil {
 		fmt.Println(err)
 	}

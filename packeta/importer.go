@@ -1,4 +1,4 @@
-package main
+package packeta
 
 import (
 	"encoding/json"
@@ -63,7 +63,7 @@ func processCarriers(d *json.Decoder, ch chan<- CarrierPoint) error {
 	return nil
 }
 
-func processFile(ch chan<- CarrierPoint) error {
+func ProcessFile(ch chan<- CarrierPoint) error {
 	r, err := os.Open(filePath)
 	if err != nil {
 		return err
